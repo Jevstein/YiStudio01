@@ -10,4 +10,4 @@ func TestAdd1(t *testing.T) {
 	} 
 }
 
-//$ go test simplematch/add_test.go
+//$ go test simplemath

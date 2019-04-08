@@ -21,10 +21,10 @@ var algorithm *string = flag.String("a", "qsort", "Sort algorithm")
 func readValues(infile string)(values []int, err error) { 
 	file, err := os.Open(infile)
 	if err != nil {
+		fmt.Println("Failed to open the input file: ", infile, "err: ", err)
 		return
 	}
 	
-	fmt.Println("Failed to open the input file ", infile)
 	defer file.Close()
 
 	br := bufio.NewReader(file)

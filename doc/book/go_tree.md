@@ -1,6 +1,6 @@
 <!-- vscode-markdown-toc -->
 * 1. [环境搭建](#)
-	* 1.1. [安装Golang的SDK](#GolangSDK)
+	* 1.1. [linux下安装Golang的SDK](#linuxGolangSDK)
 	* 1.2. [ mac下安装Golang的SDK](#macGolangSDK)
 		* 1.2.1. [下载sdk安装包](#sdk)
 		* 1.2.2. [配置Go环境变量GOPATH和GOBIN](#GoGOPATHGOBIN)
@@ -17,9 +17,28 @@
 
 # golang
 ##  1. <a name=''></a>环境搭建
-###  1.1. <a name='GolangSDK'></a>安装Golang的SDK
+###  1.1. <a name='linuxGolangSDK'></a>linux下安装Golang的SDK
 [下载安装包SDK(需翻墙)](https://golang.org/dl/)  
-[安装SDK包指导](https://blog.csdn.net/liuli9/article/details/81003869)
+[安装SDK包指导](https://blog.csdn.net/liuli9/article/details/81003869)  
+
+安装步骤:  
+```
+$ wget https://dl.google.com/go/go1.12.2.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.12.2.linux-amd64.tar.gz
+$ vim $HOME/.profile
+  export PATH=$PATH:/usr/local/go/bin
+$ source $HOME/.profile
+$ go version
+$ go env
+
+环境变量配置：
+$ sudo vim /etc/profile  #对所有用户起作用
+  export GOROOT=/usr/local/go
+  export GOPATH=/home/bruce/goProject 
+  export GOBIN=$GOPATH/bin
+  export PATH=$PATH:$GOROOT/bin
+  export PATH=$PATH:$GOPATH/bin
+```
 
 ###  1.2. <a name='macGolangSDK'></a> mac下安装Golang的SDK
 参考: [Mac下安装与配置Go语言开发环境](https://www.cnblogs.com/hopkings/p/5809850.html)  

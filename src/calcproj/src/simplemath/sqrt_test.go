@@ -9,3 +9,5 @@ func TestSqrt1(t *testing.T) {
 		t.Errorf("Sqrt(16) failed. Got %v, expected 4.", v)
 	}
 }
+
+//$ go test simplemath
