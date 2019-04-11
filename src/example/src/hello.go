@@ -172,6 +172,7 @@ func closure_test() {
 	a()
 }
 
+////////////////////////////////////////////////////////////////////////
 /*
 	func (a Integer) Less(b Integer) bool { // 面向对象 
 		return a < b
@@ -204,6 +205,36 @@ func Obj_test() {
 	// var b LessAdder = a //错误
 }
 
+////////////////////////////////////////////////////////////////////////
+func Add_g(x, y int) { 
+	z := x + y
+	fmt.Println("add_g", z)
+}
+
+func Count(ch chan int) { 
+	ch <- 1
+	fmt.Println("Counting", ch)
+}
+
+func go_test() {
+	// for i := 0; i < 10; i++ {
+	// 	go Add_g(i, i) 
+	// }
+
+	chs := make([]chan int, 10) 
+	for i := 0; i < 10; i++ {
+		chs[i] = make(chan int)
+		go Count(chs[i]) 
+	}
+		
+	for _, ch := range(chs) { 
+		<-ch
+	}
+
+	for i:=0; i<100000; i = i +1 {
+	}
+}
+
 func main() {
 	var str string
 	str = "Hello world!"
@@ -226,4 +257,5 @@ func main() {
 	Func_test()
 	closure_test()
 	Obj_test();
+	go_test();
 }
