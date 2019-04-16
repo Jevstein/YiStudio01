@@ -5,7 +5,7 @@ import (
 )
 
 type EchoServer struct {
-	Server
+	// Server
 }
 
 func (server *EchoServer) Handle(method, request string) *Response {
