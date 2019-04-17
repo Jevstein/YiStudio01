@@ -8,7 +8,7 @@ import (
 
 const (
 	Ldate         = 1 << iota     // 日期:  2009/01/23
-	Ltime                         // 时间:  01:23:23
+	Ltime                         // 时间:  01:23:23
 	Lmicroseconds                 // 微秒:  01:23:23.123123.
 	Llongfile                     // 路径+文件名+行号: /a/b/c/d.go:23
 	Lshortfile                    // 文件名+行号:   d.go:23

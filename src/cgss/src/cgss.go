@@ -95,7 +95,8 @@ func Send(args []string) int {
 
 // 将命令和处理函数对应
 func GetCommandHandlers() map[string]func(args []string) int {
-	return map[string]func([]string) int{"help": Help,
+	return map[string]func([]string) int {
+		"help": 	  Help,
 		"h":          Help,
 		"quit":       Quit,
 		"q":          Quit,
