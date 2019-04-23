@@ -103,7 +103,7 @@ func Handler(conn net.Conn, conns *map[string]net.Conn, messages chan string) {
 
 		// 把收到的消息写到通道中
 		recvStr := string(buf[0:length])
-		
+
 		fmt.Println("[Handler]::recv msg:", recvStr)
 		messages <- recvStr
 	}
